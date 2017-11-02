@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import pprint
 
 
+print('Please input CSDN user name:')
 userName = input()
 info = []
 
@@ -16,7 +17,7 @@ while True:
         break
 
     # 2. Traverse all the article's information at one page.
-    bsObj = BeautifulSoup(html)
+    bsObj = BeautifulSoup(html, 'html.parser')
     for article in bsObj.findAll('div', {'class': 'list_item article_item'}):
         newArticle = {}
         try:
